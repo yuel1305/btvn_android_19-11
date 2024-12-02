@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/studentListFragment">
+
+    <!-- Các Fragment trong Navigation Graph -->
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="com.example.studentmanager3.StudentListFragment"
+        android:label="Student List">
+        <action
+            android:id="@+id/action_to_addEditStudentFragment"
+            app:destination="@id/addEditStudentFragment">
+            <argument
+                android:name="name"
+                app:argType="string" />
+            <argument
+                android:name="mssv"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEditStudentFragment"
+        android:name="com.example.studentmanager3.AddEditStudentFragment">
+        <argument
+            android:name="name"
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="mssv"
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>
